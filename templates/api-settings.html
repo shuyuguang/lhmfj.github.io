@@ -1,0 +1,47 @@
+<!-- templates/api-settings.html -->
+<div id="page-api-settings" class="page-overlay">
+    <header class="user-settings-header">
+        <i id="api-settings-back-btn" class="fa-solid fa-chevron-left"></i>
+        <span>API 管理</span>
+        <div class="user-settings-header-actions">
+            <i id="btn-delete-config" class="fa-solid fa-trash-can"></i>
+            <i id="btn-save-config" class="fa-solid fa-floppy-disk"></i>
+        </div>
+    </header>
+    <div class="user-settings-content">
+        <form id="api-settings-form">
+            <div class="form-group">
+                <div class="form-group-header">
+                    <label for="api-config-select">选择配置 (可切换)</label>
+                    <i class="fa-solid fa-plus" id="btn-new-config-icon"></i>
+                </div>
+                <select id="api-config-select"></select>
+            </div>
+            <div class="form-group">
+                <label for="api-type-select">选择格式 (必选)</label>
+                <select id="api-type-select">
+                    <option value="openai">兼容OpenAI</option>
+                    <option value="gemini">Gemini Key</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="api-url">API 地址 (Base URL)</label>
+                <input type="text" id="api-url" placeholder="https://example.com (不用加/v1)">
+            </div>
+            <div class="form-group">
+                <label for="api-key">密钥 (API Key)</label>
+                <input type="password" id="api-key" placeholder="请输入API Key">
+            </div>
+            <div class="form-group">
+                <label for="model-select">选择模型</label>
+                <select id="model-select">
+                    <optgroup id="openai-models" label="OpenAI / 兼容"></optgroup>
+                    <optgroup id="gemini-models" label="Google Gemini"></optgroup>
+                </select>
+            </div>
+            <div class="api-actions-single">
+                <button type="button" id="fetch-models-button-new" class="action-button">拉取模型</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<!-- templates/inject-settings.html -->
+<div id="page-inject" class="page-overlay">
+    <header class="user-settings-header">
+        <i id="inject-settings-back-btn" class="fa-solid fa-chevron-left"></i>
+        <span>注入管理</span>
+        <div class="user-settings-header-actions">
+            <i id="btn-delete-prompt" class="fa-solid fa-trash-can"></i>
+            <i id="btn-save-prompt" class="fa-solid fa-floppy-disk"></i>
+        </div>
+    </header>
+    <div class="user-settings-content">
+        <div class="form-group">
+            <div class="form-group-header">
+                <label for="prompt-select">选择提示词 (可切换)</label>
+                <i class="fa-solid fa-plus" id="btn-new-prompt-icon"></i>
+            </div>
+            <select id="prompt-select"></select>
+        </div>
+        <div class="settings-card inject-settings-card locked">
+            <div class="settings-card-header">
+                对话设置
+                <i id="toggle-inject-lock" class="fa-solid fa-lock"></i>
+            </div>
+            <div class="setting-item-vertical">
+                <div class="setting-item-header">
+                    <label for="inject-max-context-slider">最大上下文长度 <span class="range-hint">(52k ~ 1m)</span></label>
+                    <input type="number" id="inject-max-context" class="slider-value-input" min="52000" max="1000000" step="1024">
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="inject-max-context-slider" min="52000" max="1000000">
+                </div>
+            </div>
+            <div class="setting-item-vertical">
+                <div class="setting-item-header">
+                    <label for="inject-max-response-slider">最大回复长度 <span class="range-hint">(10 ~ 52k)</span></label>
+                    <input type="number" id="inject-max-response" class="slider-value-input" min="10" max="52000" step="100">
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="inject-max-response-slider" min="10" max="52000">
+                </div>
+            </div>
+            <div class="setting-item-vertical">
+                <div class="setting-item-header">
+                    <label for="inject-temp-slider">Temperature <span class="range-hint">(0.1 ~ 1.3)</span></label>
+                    <input type="number" id="inject-temp-value" class="slider-value-input" min="0.1" max="1.3" step="0.01">
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="inject-temp-slider" min="0.1" max="1.3" step="0.01">
+                </div>
+            </div>
+            <div class="setting-item-vertical">
+                <div class="setting-item-header">
+                    <label for="inject-top-p-slider">Top P <span class="range-hint">(0.1 ~ 1.0)</span></label>
+                    <input type="number" id="inject-top-p-value" class="slider-value-input" min="0.1" max="1.0" step="0.01">
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="inject-top-p-slider" min="0.1" max="1.0" step="0.01">
+                </div>
+            </div>
+        </div>
+        <div class="settings-card">
+            <div class="settings-card-header">选项设置</div>
+            <div class="settings-nav-item">
+                <label for="inject-ability-select">推理能力</label>
+                <select id="inject-ability-select">
+                    <option value="auto">auto</option>
+                    <option value="minimum">minimum</option>
+                    <option value="low">低</option>
+                    <option value="medium">中</option>
+                    <option value="high">高</option>
+                    <option value="maximum">maximum</option>
+                </select>
+            </div>
+            <div class="settings-nav-item">
+                <label for="inject-mode-select">模式选择</label>
+                <select id="inject-mode-select">
+                    <option value="chat">聊天模式-手机体</option>
+                    <option value="story">剧情模式-小说体</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

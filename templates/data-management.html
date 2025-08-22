@@ -1,0 +1,29 @@
+<!-- templates/data-management.html -->
+<div id="page-data-management" class="page-overlay">
+    <header class="user-settings-header">
+        <i id="data-management-back-btn" class="fa-solid fa-chevron-left"></i>
+        <span>数据管理</span>
+        <i></i>
+    </header>
+    <div class="user-settings-content">
+        <div class="data-actions-list">
+            <button id="btn-export-data" class="data-action-item">
+                <i class="fa-solid fa-file-export"></i>
+                <span>导出本地数据</span>
+            </button>
+            <button id="btn-import-data" class="data-action-item">
+                <i class="fa-solid fa-file-import"></i>
+                <span>导入本地数据</span>
+            </button>
+            <button id="btn-upload-cloud" class="data-action-item disabled">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>上传云端数据</span>
+            </button>
+            <button id="btn-clear-data" class="data-action-item danger">
+                <i class="fa-solid fa-trash-can"></i>
+                <span>清除本地数据</span>
+            </button>
+            <input type="file" id="import-file-input" accept=".json" style="display: none;">
+        </div>
+    </div>
+</div>

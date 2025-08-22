@@ -1,0 +1,86 @@
+<!-- templates/user-settings.html -->
+<div id="page-user-settings" class="page-overlay">
+    <header class="user-settings-header">
+        <i id="user-settings-back-btn" class="fa-solid fa-chevron-left"></i>
+        <span>用户设置</span>
+        <div class="user-settings-header-actions">
+            <i id="user-settings-delete-btn" class="fa-solid fa-trash-can"></i>
+            <i id="user-settings-save-btn" class="fa-solid fa-floppy-disk"></i>
+        </div>
+    </header>
+    <div class="user-settings-content">
+        <div class="user-tags-container">
+            <div id="user-profile-tags" class="user-settings-tags"></div>
+            <div class="add-tag-button-container">
+                <i class="fa-solid fa-plus" id="add-user-profile-btn"></i>
+            </div>
+        </div>
+        <div class="settings-card profile-edit-card">
+            <img src="https://i.imgur.com/uG2g8xX.png" alt="avatar" class="profile-avatar" id="user-avatar-preview">
+            <input type="file" id="user-avatar-input" accept="image/*" style="display: none;">
+            <div class="profile-details-inputs">
+                <div class="input-row">
+                    <label>姓名</label>
+                    <input type="text" id="input-name" placeholder="你的名字">
+                </div>
+                <div class="input-row">
+                    <label>性别</label>
+                    <input type="text" id="input-gender" value="女" readonly>
+                </div>
+                <div class="input-row">
+                    <label>生日</label>
+                    <input type="text" placeholder="例如1.1" id="input-birthday">
+                </div>
+                <div class="input-row">
+                    <label>年龄</label>
+                    <input type="text" placeholder="例如20" id="input-age">
+                </div>
+            </div>
+        </div>
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div><i class="fa-solid fa-globe"></i> 应用范围</div>
+            </div>
+            <div class="settings-card-body">
+                <div class="toggle-switch-item">
+                    <span>全局应用此设定</span>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-global-apply">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="character-binding-container" id="character-binding-container">
+                    <span>绑定到指定角色</span>
+                    <select id="bind-character-select"></select>
+                </div>
+            </div>
+        </div>
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div><i class="fa-solid fa-user"></i> 我的设定</div>
+                <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="settings-card-body">
+                <textarea placeholder="此处填写设定" id="textarea-settings"></textarea>
+            </div>
+        </div>
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div><i class="fa-solid fa-pen-to-square"></i> 我的个性签名</div>
+            </div>
+            <div class="settings-card-body">
+                <input type="text" placeholder="此处填写个性签名" id="input-signature">
+            </div>
+        </div>
+        <div class="settings-nav-group">
+            <a href="#" class="settings-nav-item">
+                <div><i class="fa-solid fa-star"></i> 我的空间</div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a href="#" class="settings-nav-item">
+                <div><i class="fa-solid fa-gift"></i> 我的礼物墙</div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
