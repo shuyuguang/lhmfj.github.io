@@ -1,0 +1,71 @@
+/* styles/page-overlays.css */
+
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1002;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-overlay.active {
+    transform: translateX(0);
+}
+
+.user-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    padding-top: 45px; /* 保持为状态栏留出的空间 */
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.user-settings-header span {
+    font-size: 17px;
+    font-weight: 600;
+}
+.user-settings-header i {
+    font-size: 18px;
+    cursor: pointer;
+    width: 25px;
+    text-align: center;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.user-settings-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+/* 页面层级控制 */
+#page-character-settings,
+#page-user-settings,
+#page-api-settings,
+#page-inject,
+#page-data-management {
+    z-index: 1004;
+}
+
+#page-chat-interface {
+    z-index: 1005;
+}
+
+#page-char-chat-settings {
+    z-index: 1006;
+}
+
+#page-character-homepage {
+    z-index: 1007;
+}
+
+#page-fullscreen-editor {
+    z-index: 1010;
+}

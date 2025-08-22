@@ -1,0 +1,37 @@
+/* styles/global.css */
+
+/* 全局样式和变量 */
+:root {
+    --bg-color: #F5F5F7;
+    --primary-blue: #007AFF;
+    --text-primary: #000000;
+    --text-secondary: #8E8E93;
+    --border-color: #E5E5EA;
+    --white-color: #FFFFFF;
+    --vip-gold: #FFCA28;
+}
+
+/* 强制 html 和 body 占满全屏且不可滚动，为移动端优化 */
+html, body {
+    height: 100%;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background-color: #CCCCCC;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 通用隐藏工具类 */
+.hidden {
+    display: none !important;
+}
+
+/* 通用占位符文本样式 */
+.placeholder-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 2px 0;
+}

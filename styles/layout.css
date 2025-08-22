@@ -1,0 +1,67 @@
+/* styles/layout.css */
+
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    max-height: 880px;
+    background-color: var(--bg-color);
+    border-radius: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 主内容区包裹器 */
+.main-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    position: relative;
+    transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    padding-top: 32px; /* 为动态加载的状态栏留出空间 */
+    box-sizing: border-box;
+}
+
+/* 侧边栏打开时，主内容区的状态 */
+.app-container.sidebar-open .main-content-wrapper { 
+    transform: translateX(90%); 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: -5px 0px 20px rgba(0,0,0,0.2); 
+}
+
+/* 底部导航 */
+.bottom-nav { 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    background-color: #FDFDFD; 
+    border-top: 1px solid var(--border-color); 
+    padding: 5px 0; 
+    height: 45px; 
+    flex-shrink: 0; 
+}
+.nav-button { 
+    background: none; 
+    border: none; 
+    color: var(--text-secondary); 
+    cursor: pointer; 
+    position: relative; 
+    padding: 0 10px; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+}
+.nav-button i { 
+    font-size: 22px; 
+    margin-bottom: 0; 
+}
+.nav-button.active { 
+    color: var(--primary-blue); 
+}

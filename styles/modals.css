@@ -1,0 +1,280 @@
+/* styles/modals.css */
+
+/* 模态框遮罩层容器 */
+.modal-overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay-container.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 模态框面板 */
+.modal-panel {
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 380px;
+    max-height: 90vh;
+    display: none;
+    flex-direction: column;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay-container.visible .modal-panel.visible {
+    display: flex;
+    transform: scale(1);
+}
+
+/* 模态框头部 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+.modal-header h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+
+/* 模态框内容区 */
+.modal-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* 模态框底部 */
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+.modal-action-btn {
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: var(--white-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.modal-action-btn:hover {
+    background-color: #0056b3;
+}
+.modal-action-btn.danger {
+    background-color: #ff3b30;
+}
+.modal-action-btn.danger:disabled {
+    background-color: #fd9a94;
+    cursor: not-allowed;
+}
+
+
+/* --- 天气模态框特定样式 --- */
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.weather-option-btn {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+.weather-option-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.weather-option-btn.active {
+    border-color: var(--primary-blue);
+    background-color: #e6f2ff;
+    box-shadow: 0 0 0 2px var(--primary-blue);
+}
+.weather-option-btn.add-new {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* --- 定位模态框特定样式 --- */
+#location-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.location-card {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.location-card .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.location-card label {
+    font-size: 14px;
+    color: var(--text-primary);
+    width: 40px;
+    flex-shrink: 0;
+}
+.location-card input {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 5px 0;
+    font-size: 14px;
+    font-family: inherit;
+}
+.location-card input:focus {
+    outline: none;
+    border-bottom-color: var(--primary-blue);
+}
+.location-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.location-delete-btn {
+    background: none;
+    border: none;
+    color: #ff3b30;
+    cursor: pointer;
+    font-size: 13px;
+}
+.location-select-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+.location-select-indicator.selected {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white-color);
+}
+.location-select-indicator .fa-check {
+    font-size: 14px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+}
+.location-select-indicator.selected .fa-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- 状态模态框特定样式 --- */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.status-option-btn {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 40px;
+    padding: 4px 1px;
+    line-height: 1.25;
+}
+.status-option-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.status-option-btn.active {
+    border-color: var(--primary-blue);
+    background-color: var(--primary-blue);
+    color: var(--white-color);
+    font-weight: 500;
+}
+.status-option-btn.add-new {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* --- 清除数据模态框 --- */
+.clear-data-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* --- 图片剪裁模态框样式 --- */
+.cropper-image-container {
+    width: 100%;
+    height: 300px;
+    background-color: #e9ecef;
+    margin-bottom: 15px;
+}
+#image-to-crop {
+    display: block;
+    max-width: 100%;
+}
+.cropper-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
